@@ -89,6 +89,8 @@ const SignUpPage: React.FC = () => {
       try {
         await createValidateEmailMutation(userData.emailId).unwrap();
       } catch (error) {
+
+        
         isError = true
         alert(`Account already exists with this email id`);       
       }
