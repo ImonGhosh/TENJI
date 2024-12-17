@@ -1,0 +1,27 @@
+{
+  "dependencies": {
+    "@elastic/elasticsearch": "^8.17.0",
+    "@nestjs/common": "^10.4.15",
+    "@nestjs/core": "^10.4.15",
+    "@nestjs/elasticsearch": "^10.0.2",
+    "@nestjs/platform-express": "^10.4.15",
+    "@reduxjs/toolkit": "^2.5.0",
+    "@types/react": "^19.0.1",
+    "@types/react-redux": "^7.1.34",
+    "antd": "^5.22.5",
+    "axios": "^1.7.9",
+    "class-transformer": "^0.5.1",
+    "class-validator": "^0.14.1",
+    "neo4j-driver": "^5.27.0",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0",
+    "react-router-dom": "^7.0.2"
+  },
+  "devDependencies": {
+    "@types/react-dom": "^19.0.2",
+    "typescript": "^5.7.2"
+  },
+  "scripts": {
+    "start:debug": "nest start --debug --watch"
+  }
+}

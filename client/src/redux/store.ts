@@ -3,6 +3,7 @@ import { bookApi } from "@/services/BookApi";
 import { caseApi } from "@/services/CaseApi";
 import { citationsApi } from "@/services/CitationsApi";
 import { referenceApi } from "@/services/ReferenceApi";
+import { userApi } from "@/services/UsersApi"; // Add this import
 import { articleReducer } from "@/slices/ArticleSlice";
 import { caseReducer } from "@/slices/CaseSlice";
 import { citationsReducer } from "@/slices/CitationsSlice";
@@ -10,10 +11,10 @@ import { formReducer } from "@/slices/FormSlice";
 import { languageReducer } from "@/slices/LanguageSlice";
 import { referenceReducer } from "@/slices/ReferenceSlice";
 import { searchBarReducer } from "@/slices/SearchBarSlice";
-import { configureStore } from "@reduxjs/toolkit";
-import { setupListeners } from "@reduxjs/toolkit/query";
 import { appTourReducer } from "@/slices/AppTourSlice";
 import { commonApi } from "@/services/CommonApi";
+import { configureStore } from "@reduxjs/toolkit";
+import { setupListeners } from "@reduxjs/toolkit/query";
 
 export const store = configureStore({
   reducer: {
@@ -23,6 +24,7 @@ export const store = configureStore({
     [referenceApi.reducerPath]: referenceApi.reducer,
     [citationsApi.reducerPath]: citationsApi.reducer,
     [commonApi.reducerPath]: commonApi.reducer,
+    [userApi.reducerPath]: userApi.reducer, // Add this line
     articles: articleReducer,
     cases: caseReducer,
     references: referenceReducer,
@@ -39,7 +41,8 @@ export const store = configureStore({
       bookApi.middleware,
       referenceApi.middleware,
       citationsApi.middleware,
-      commonApi.middleware
+      commonApi.middleware,
+      userApi.middleware // Add this line
     ),
 });
 

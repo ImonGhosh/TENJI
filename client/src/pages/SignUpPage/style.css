@@ -1,0 +1,351 @@
+/* Reset styles for consistency */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Body styles for centering and background */
+body {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh; /* Full viewport height */
+  background-color: white; /* White background */
+  font-family: 'Arial', sans-serif;
+}
+
+/* Form container (shared between login and sign-up pages) */
+.form-container {
+  background-color: #f9fafb; /* Light gray background */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+  border-radius: 12px; /* Rounded corners */
+  padding: 40px 32px; /* Padding inside the container */
+  width: 100%;
+  max-width: 400px; /* Set max width */
+}
+
+/* Heading */
+.form-heading {
+  font-size: 24px;
+  font-weight: 600;
+  color: #1a202c; /* Dark gray text */
+  text-align: center;
+  margin-bottom: 24px; /* Space below heading */
+}
+
+/* Google Button */
+.google-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #e2e8f0; /* Light border */
+  border-radius: 8px;
+  background-color: #ffffff; /* White background */
+  color: #2d3748; /* Gray text */
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  margin-bottom: 24px; /* Space below button */
+}
+
+.google-button:hover {
+  background-color: #f1f5f9; /* Light hover effect */
+}
+
+.google-icon {
+  width: 20px;
+  height: 20px;
+  margin-left: 8px; /* Space between text and icon */
+}
+
+/* Divider */
+.divider {
+  display: flex;
+  align-items: center;
+  margin: 24px 0;
+}
+
+.divider-line {
+  flex-grow: 1;
+  height: 1px;
+  background-color: #e2e8f0; /* Light gray line */
+}
+
+.divider-text {
+  margin: 0 16px;
+  font-size: 14px;
+  color: #a0aec0; /* Muted gray text */
+}
+
+/* Input fields */
+.input-field {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #e2e8f0; /* Light border */
+  border-radius: 8px;
+  background-color: #f9fafb; /* Light gray background */
+  color: #4a5568; /* Darker gray text */
+  font-size: 14px;
+  margin-bottom: 16px; /* Space between inputs */
+}
+
+.input-field::placeholder {
+  color: #a0aec0; /* Placeholder color */
+}
+
+.input-field:focus {
+  outline: none;
+  border-color: #3182ce; /* Blue border on focus */
+  box-shadow: 0 0 0 3px rgba(66, 153, 225, 0.3); /* Subtle focus ring */
+}
+
+/* Submit button */
+.submit-button {
+  width: 100%;
+  padding: 12px;
+  background-color: #1a202c; /* Dark gray button */
+  color: #ffffff; /* White text */
+  font-size: 14px;
+  font-weight: 600;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  margin-top: 32px;
+}
+
+.submit-button:hover {
+  background-color: #2d3748; /* Darker gray on hover */
+}
+
+/* Footer text */
+.footer-text {
+  text-align: center;
+  font-size: 14px;
+  color: #a0aec0; /* Muted gray text */
+  margin-top: 32px; /* Space above footer */
+}
+
+.footer-text a {
+  color: #3182ce; /* Blue link */
+  text-decoration: none;
+}
+
+.footer-text a:hover {
+  text-decoration: underline;
+}
+
+/* --- Additional Styles for Sign-Up Page --- */
+
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Arial', sans-serif;
+  background-color: #f9fafb;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+/* Main Container */
+.signup-container {
+  display: flex;
+  width: 80%;
+  max-width: 1200px;
+  background-color: white;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+/* Sidebar */
+.sidebar {
+  width: 25%;
+  background-color: #ffffff;
+  border-right: 1px solid #e2e8f0;
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+.sidebar-title {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 16px;
+  color: #1a202c;
+  text-align: center;
+  border-bottom: 2px solid #e2e8f0;
+  padding-bottom: 8px;
+}
+
+.sidebar-menu {
+  list-style: none;
+  width: 100%;
+  padding: 0;
+}
+
+.sidebar-menu li {
+  font-size: 16px;
+  font-weight: 600;
+  color: #4a5568;
+  padding: 12px 16px;
+  margin-bottom: 12px;
+  cursor: pointer;
+  text-align: center;
+  border-radius: 8px;
+  background-color: #f9fafb;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.3s, color 0.3s, box-shadow 0.3s;
+}
+
+.sidebar-menu li.active {
+  font-weight: bold;
+  color: #ffffff;
+  background-color: #1a202c;
+  box-shadow: 0 4px 8px rgba(49, 130, 206, 0.4);
+}
+
+.sidebar-menu li:hover {
+  background-color: #ebf4ff;
+  color: #1a202c;
+  box-shadow: 0 3px 6px rgba(66, 153, 225, 0.3);
+}
+
+/* Main Content */
+.signup-main {
+  flex: 1;
+  padding: 32px;
+  position: relative;
+}
+
+.language-selector {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+}
+
+.language-selector select {
+  padding: 8px;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  font-size: 14px;
+  color: #4a5568;
+}
+
+.signup-title {
+  font-size: 22px;
+  font-weight: bold;
+  color: #1a202c;
+  margin-bottom: 24px;
+}
+
+/* Form Section */
+.form-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+}
+
+.input-field {
+  padding: 12px;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  font-size: 14px;
+  background-color: #f9fafb;
+}
+
+.input-field:focus {
+  outline: none;
+  border-color: #3182ce;
+  box-shadow: 0 0 0 3px rgba(66, 153, 225, 0.3);
+}
+
+/* Error Message Styling */
+.error-message {
+  color: #e53e3e;
+  font-size: 12px;
+  margin-top: 4px;
+}
+
+/* Password Field Styling */
+.password-container {
+  position: relative;
+}
+
+.password-toggle {
+  position: absolute;
+  top: 50%;
+  right: 12px;
+  transform: translateY(-50%);
+  cursor: pointer;
+  color: #a0aec0;
+}
+
+/* Inline Password Fields */
+.password-grid {
+  display: flex;
+  gap: 16px;
+}
+
+.password-grid .input-field {
+  flex: 1;
+}
+
+/* Bio Field */
+.bio-field {
+  grid-column: span 2;
+}
+
+/* Form Actions */
+.form-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 12px;
+  margin-top: 24px;
+}
+
+.action-button {
+  padding: 10px 20px;
+  font-size: 14px;
+  font-weight: 600;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+}
+
+.action-button.cancel {
+  background-color: #e53e3e;
+  color: white;
+}
+
+.action-button.save {
+  background-color: #1a202c;
+  color: white;
+}
+
+.action-button.next {
+  background-color: #1a202c;
+  color: white;
+}
+
+/* Error Field Highlight */
+.input-field.error {
+  border-color: #e53e3e;
+  background-color: #fff5f5;
+}
+

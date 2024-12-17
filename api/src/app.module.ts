@@ -7,6 +7,7 @@ import { CitationsModule } from './citations/citations.module';
 import { ReferencesModule } from './references/references.module';
 import { Neo4jModule } from './neo4j/neo4j.module';
 import { BooksModule } from './books/books.module';
+import { UsersModule } from './users/users.module';
 // import { ElasticSearchModule } from './elastic-search/elastic-search.module';
 // import { ElasticsearchModule } from '@nestjs/elasticsearch';
 import { SharedModule } from './shared/shared.module';
@@ -15,6 +16,7 @@ import { SharedModule } from './shared/shared.module';
   imports: [
     Neo4jModule,
     ArticlesModule,
+    UsersModule,
     CasesModule,
     CitationsModule,
     ReferencesModule,
