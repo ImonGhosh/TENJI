@@ -1,7 +1,7 @@
 import { API_URL } from "@/utils/constants";
 import { createApi } from "@reduxjs/toolkit/query/react";
 import { fetchBaseQuery } from "@reduxjs/toolkit/query/react";
-import { User } from "@/types";
+import { User, SignInData } from "@/types";
 
 export const userApi = createApi({
   reducerPath: "usersApi",
@@ -25,7 +25,14 @@ export const userApi = createApi({
         body: { emailId },
       }),
     }),
+    validateSignIn: build.mutation<void, { signInData: SignInData }>({
+      query: (body) => ({
+        url: "users/validateSignInData",
+        method: "POST",
+        body,
+      }),
+    }),
   }),
 });
 
-export const { useCreateUserQueryMutation, useValidateEmailIdMutation } = userApi;
+export const { useCreateUserQueryMutation, useValidateEmailIdMutation, useValidateSignInMutation } = userApi;

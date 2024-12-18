@@ -7,6 +7,12 @@ export interface User {
   bio?: string; // Optional as it might not always be provided
 }
 
+export interface SignInData {
+  username: string;
+  password: string;
+}
+
+
   // export interface Preference {
   //   id: string;
   //   name: string;

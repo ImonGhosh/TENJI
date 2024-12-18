@@ -250,7 +250,7 @@ const SearchBar = () => {
     dispatch(setQuery([]));
     dispatch(setLemmatizedQuery(""));
     setSearchTerm("");
-    navigate("/");
+    navigate("/signin");
   };
 
   const getAppliedFiltersCount = () => {

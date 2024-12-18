@@ -23,16 +23,15 @@ export class UsersController {
       const result = await this.usersService.saveUser(user);
      // return result;
     } catch (error) {
-      this.logger.error('Controller Error :', error.message);
       throw new Error(`Failed to create User nodes: ${error.message}`);
-      throw new HttpException(
-        {
-          statusCode: HttpStatus.INTERNAL_SERVER_ERROR,
-          message: 'Failed to create user',
-          error: error.message,
-        },
-        HttpStatus.INTERNAL_SERVER_ERROR,
-      );
+      // throw new HttpException(
+      //   {
+      //     statusCode: HttpStatus.INTERNAL_SERVER_ERROR,
+      //     message: 'Failed to create user',
+      //     error: error.message,
+      //   },
+      //   HttpStatus.INTERNAL_SERVER_ERROR,
+      // );
     }
   }
 
@@ -44,6 +43,28 @@ export class UsersController {
     } catch (error) {
       this.logger.error('Controller Error :', error.message);
       throw new Error(`${error.message}`);
+    }
+  }
+
+  /*@Post('validateSignInData')
+  public async validateSignInData(@Body() body: { signInData: any }) {
+    try {
+      const result = await this.usersService.validateEmailId(emailId);
+    } catch (error) {
+      this.logger.error('Controller Error :', error.message);
+      throw new Error(`${error.message}`);
+    }
+  }*/
+
+  @Post('validateSignInData')
+  public async validateSignInData(@Body() body: { signInData: any }) {
+    this.logger.error('validateSignInData API Hit :');
+    try {
+      const { signInData } = body;
+      const result = await this.usersService.validateSignInData(signInData);
+    } catch (error) {
+      this.logger.error('validateSignInData API Error :', error.message);
+      throw new Error(`Failed to validate username & password: ${error.message}`);
     }
   }
 }

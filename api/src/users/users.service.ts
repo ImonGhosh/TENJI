@@ -76,4 +76,36 @@ export class UsersService {
 
     }
 
+
+    public async validateSignInData(signInData) {
+        this.logger.error(`Test validateSignInData API`);
+        const { username, password } = signInData;
+
+        // Query to find a User node that matches the emailId and password
+        const validateUserQuery = `
+          MATCH (u:User { emailId: $username, password: $password })
+          RETURN u`;
+
+        try {
+          this.logger.log(`Validating sign-in for emailId: ${username}`);
+
+          // Run the query
+          const result = await this.neo4jService.runQuery(validateUserQuery, {
+            username,
+            password,
+          });
+
+          // Handle query results
+          if (result && result.length > 0) {
+            this.logger.log(`User validated successfully for emailId: ${username}`);
+          } else {
+            this.logger.error(`Invalid username or password for emailId: ${username}`);
+            throw new Error('Invalid username or password');
+          }
+        } catch (error) {
+          this.logger.error(`Error validating sign-in: ${error.message}`);
+          throw new Error(error.message);
+        }
+      }
+
 }

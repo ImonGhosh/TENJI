@@ -12,6 +12,12 @@ function App() {
         <Routes>
           <Route path="/">
             <Route index element={<LogInPage />} />
+            <Route path="signin" element={<Layout />} >
+              <Route index element={<HomePage />} />
+            </Route>
+            <Route path="search" element={<Layout />} >
+              <Route index element={<FilteredResultsPage />} />
+            </Route>
             <Route path="signup" element={<SignUpPage />} />
           </Route>
           <Route path="/*" element={<NotFound />} />

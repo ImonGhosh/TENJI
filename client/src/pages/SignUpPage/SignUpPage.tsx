@@ -44,6 +44,38 @@ const SignUpPage: React.FC = () => {
       invalidPassword:
         "Password must contain at least 8 characters, 1 capital letter, 1 number, and 1 special character.",
     },
+    de: {
+      signUp: "Registrieren",
+    firstName: "Vorname",
+    lastName: "Nachname",
+    emailId: "E-Mail",
+    password: "Passwort",
+    confirmPassword: "Passwort bestätigen",
+    occupation: "Beruf",
+    bio: "Biografie",
+    cancel: "Abbrechen",
+    saveAndSubmit: "Speichern und Absenden",
+    required: "ist erforderlich.",
+    passwordMismatch: "Passwörter stimmen nicht überein.",
+    invalidPassword:
+      "Das Passwort muss mindestens 8 Zeichen, 1 Großbuchstaben, 1 Zahl und 1 Sonderzeichen enthalten."
+  },
+  pt: {
+    signUp: "Cadastrar-se",
+    firstName: "Nome",
+    lastName: "Sobrenome",
+    emailId: "E-mail",
+    password: "Senha",
+    confirmPassword: "Confirmar Senha",
+    occupation: "Profissão",
+    bio: "Biografia",
+    cancel: "Cancelar",
+    saveAndSubmit: "Salvar e Enviar",
+    required: "é obrigatório.",
+    passwordMismatch: "As senhas não coincidem.",
+    invalidPassword:
+      "A senha deve conter pelo menos 8 caracteres, 1 letra maiúscula, 1 número e 1 caractere especial."
+  }
     // Additional translations omitted for brevity
   };
 
@@ -131,11 +163,8 @@ const SignUpPage: React.FC = () => {
         <div className="language-selector">
           <select value={language} onChange={handleLanguageChange}>
             <option value="en">English</option>
-            <option value="fr">Français</option>
             <option value="de">Deutsch</option>
             <option value="pt">Português</option>
-            <option value="it">Italiano</option>
-            <option value="zh">中文 (Chinese)</option>
           </select>
         </div>
         <h2 className="signup-title">{translations[language].signUp}</h2>
