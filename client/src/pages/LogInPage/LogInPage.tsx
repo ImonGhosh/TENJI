@@ -1,10 +1,14 @@
 import React, { useState } from "react";
-import { useNavigate } from "react-router-dom"; // Import useNavigate for navigation
+import { useNavigate } from "react-router-dom";
+import { useAppDispatch } from "@/redux/hooks";
 import './style.css';
 import { useValidateSignInMutation } from "@/services/UsersApi";
 import GoogleIcon from './google-icon.svg';
+import { setUser } from "@/slices/UserInfoSlice";
+
 
 const LoginPage: React.FC = () => {
+  const dispatch = useAppDispatch();
   const navigate = useNavigate(); // Initialize the navigation hook
   const [ValidateSignInMutation] = useValidateSignInMutation();
   const [signInData, setUserData] = useState({
@@ -21,9 +25,13 @@ const LoginPage: React.FC = () => {
   const handleSignIn = async () => {
       try {
         await ValidateSignInMutation({ signInData: signInData }).unwrap();
-        //alert(`Sign In successful!`);
-        //navigate("/signin")
-        window.location.href = "/signin";
+        //dispatch user info to redux store  
+        // dispatch(setUser({ 
+        //   emailId: signInData.username, 
+        //   password: signInData.password 
+        // }));
+        dispatch(setUser(signInData.username));
+         window.location.href = "/signin";
       } catch (error) {
         alert(`Incorrect Username or Password`);
       }

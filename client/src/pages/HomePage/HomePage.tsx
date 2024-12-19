@@ -1,3 +1,5 @@
+import React from 'react';
+// import { RootState } from "@/redux/store";
 import Case from "./Case";
 import Article from "./Article";
 import Book from "./Book";
@@ -14,6 +16,10 @@ const HomePage = () => {
   };
 
   const content = <div style={contentStyle} />;
+
+  const {emailId} = useAppSelector((state) => state.userInfo);
+  alert(emailId);
+
   return (
     <>
       {!isSearching && (

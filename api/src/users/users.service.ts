@@ -29,7 +29,8 @@ export class UsersService {
         emailId: $emailId,
         password: $password,
         bio: $bio,
-        occupation: $occupation
+        occupation: $occupation,
+        searchHistory: ""
       })
     `;
 
@@ -42,6 +43,7 @@ export class UsersService {
         password: user.password,
         bio: user.bio,
         occupation: user.occupation,
+        searchHistory: ""
       });
 
       this.logger.log(`Created User: ${JSON.stringify(userResult)}`);

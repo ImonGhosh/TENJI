@@ -3,7 +3,7 @@ import { bookApi } from "@/services/BookApi";
 import { caseApi } from "@/services/CaseApi";
 import { citationsApi } from "@/services/CitationsApi";
 import { referenceApi } from "@/services/ReferenceApi";
-import { userApi } from "@/services/UsersApi"; // Add this import
+import { userApi } from "@/services/UsersApi";
 import { articleReducer } from "@/slices/ArticleSlice";
 import { caseReducer } from "@/slices/CaseSlice";
 import { citationsReducer } from "@/slices/CitationsSlice";
@@ -15,6 +15,7 @@ import { appTourReducer } from "@/slices/AppTourSlice";
 import { commonApi } from "@/services/CommonApi";
 import { configureStore } from "@reduxjs/toolkit";
 import { setupListeners } from "@reduxjs/toolkit/query";
+import { userReducer } from "@/slices/UserInfoSlice";
 
 export const store = configureStore({
   reducer: {
@@ -24,8 +25,9 @@ export const store = configureStore({
     [referenceApi.reducerPath]: referenceApi.reducer,
     [citationsApi.reducerPath]: citationsApi.reducer,
     [commonApi.reducerPath]: commonApi.reducer,
-    [userApi.reducerPath]: userApi.reducer, // Add this line
+    [userApi.reducerPath]: userApi.reducer,
     articles: articleReducer,
+    userInfo: userReducer,
     cases: caseReducer,
     references: referenceReducer,
     searchBar: searchBarReducer,
@@ -42,7 +44,7 @@ export const store = configureStore({
       referenceApi.middleware,
       citationsApi.middleware,
       commonApi.middleware,
-      userApi.middleware // Add this line
+      userApi.middleware
     ),
 });
 
