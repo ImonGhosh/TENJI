@@ -18,7 +18,6 @@ const HomePage = () => {
   const content = <div style={contentStyle} />;
 
   const {emailId} = useAppSelector((state) => state.userInfo);
-  alert(emailId);
 
   return (
     <>

@@ -130,7 +130,7 @@ const SignUpPage: React.FC = () => {
       try {
         await createUserMutation({ user: userData }).unwrap();
         alert(`${translations[language].signUp} successfully!`);
-        window.location.href = "/"; // Redirect to the homepage
+        window.location.href = "/"; // Redirect to the login page
       } catch (error) {
         alert(`Failed to create user`);
       }
